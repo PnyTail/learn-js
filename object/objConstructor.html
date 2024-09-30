@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object constructor: hàm tạo object (xây dựng khuôn mẫu cho object) (bản thiết kế ngôi nhà)
+
+        //let User = function() {} có thể dùng cách này để tạo obj constructor
+
+        //định nghĩa
+        function User(firstName, lastName, avatar) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.avatar = avatar;
+
+            this.getName = function() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        //khởi tạo
+        let student = new User('Nam', 'Hoàng', 'hinhanh');
+        let gammer = new User('Phếch', 'Kơ', 'ava ta');
+
+        //2 thuộc tính riêng của 2 đối tượng, khởi tạo chúng ở bên ngoài
+        student.title = 'Hello';
+        gammer.game = 'lol';
+
+        console.log(student.getName());
+        console.log(gammer.getName());
+
+    </script>
+</body>
+</html>

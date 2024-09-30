@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i = 0;
+        let isSuccess = false;
+
+        do {
+            i++;
+            console.log(`Nạp thẻ lần ${i}`);
+
+            //true nếu lần đầu nạp đúng, false là lần đầu nạp sai
+            if (false) {
+                isSuccess = true;
+            }
+        } while (!isSuccess && i <= 3); //nếu thất bại sẽ quay lại, và chỉ kiểm tra thêm 3 lần nữa
+    </script>
+</body>
+</html>

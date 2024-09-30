@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  reduce() - muốn nhận về 1 giá trị duy nhất sau khi tính toán
+            và xử lý trên những phần tử trong 1 array
+        */
+
+        let courses = [
+            {
+                id: 1,
+                name: 'javascript',
+                coin: 250
+                //250
+            },
+            {
+                id: 2,
+                name: 'HTML, CSS',
+                coin: 0
+            },
+            {
+                id: 3,
+                name: 'Ruby',
+                coin: 0
+            },
+            {
+                id: 4,
+                name: 'PHP',
+                coin: 400
+            },
+            {
+                id: 5,
+                name: 'ReactJS',
+                coin: 500
+            }
+         ];
+
+        //in ra tổng số coin của tất cả course
+        //cách 1: for ... of
+        //biến lưu trữ 
+        // let totalCoin = 0;
+
+        // // lặp qua các phần tử
+        // for (let course of courses) {
+
+        //         // thực hiện việc lưu trữ
+        //     totalCoin += course.coin;
+        // }
+        // console.log(totalCoin);
+
+        //cách 2: reduce(), truyền vào 2 đối số
+        /*
+            đối số đầu là 1 function
+            đối số 2 là giá trị khởi tạo - initialValue
+
+            bên trong reduce() sẽ có vòng lặp
+            khi duyệt qua những phần từ trong mảng thì sẽ gọi
+            lại function truyền vào
+        */
+
+        /*
+            accumulator lấy giá trị trước đó
+            currentValue (phần tử đang được xử lý) là phần tử mà reduce sẽ trả lại khi nó đang duyệt đến 1 vị
+            trí nào đó trong array, trong vd này sẽ là những course js, html, php
+            currentIndex là index của currentValue trong mảng
+            originArray (array gọi hàm reduce) là array gốc, đã gọi phương thức reduce(), trong vd này là courses[]
+        */
+        var i = 0;
+        function coinCalc(accumulator, currentValue, currentIndex, originArray) {
+            i++;
+            var total = accumulator + currentValue.coin;
+            console.table({
+                'Lượt chạy: ': i,
+                'Biến tích trữ: ': accumulator,
+                'Giá khoá học: ': currentValue.coin,
+                'Tích trữ được: ': total
+            });
+            // console.log(accumulator);
+            // console.log(currentValue);
+            return total;
+        }
+
+        /*
+            initValue = 0 cũng giống như việc khởi tạo giá trị ban đầu cho biến lưu trữ của
+            phương thức reduce(), có thể truyền vào bất cứ kiểu dữ liệu nào.
+            khi reduce hoạt động, nó sẽ gọi ngược lại function coinCalc và sẽ trả lại các tham số.
+            số 0 sẽ được gán cho accumulator (biến lưu trữ) vào lần duyệt đầu tiên
+        */
+        var totalCoin = courses.reduce(coinCalc, 0);
+
+        console.log(totalCoin);
+
+    </script>
+</body>
+</html>

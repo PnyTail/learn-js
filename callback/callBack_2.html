@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Callback
+            
+            1.là hàm
+            2. truyền qua đối số
+            3. được gọi lại (trong hàm nhận đối số)
+
+        */
+
+        Array.prototype.map2 = function(callback) {
+            let outPut = [];
+            arrayLength = this.length;
+
+            for (let i = 0; i < arrayLength; i++) {
+                let result = callback(this[i], i);
+                outPut.push(result);
+            }
+
+            return outPut;
+        }
+
+        let courses = [
+            'javascript',
+            'php',
+            'dart'
+        ];
+
+        // let htmls = courses.map(function(course) {
+        //     return `<h2>${course}</h2>`;
+        // });
+
+        let htmls = courses.map2(function(course, index) {
+            return `${index} <h2>${course}</h2>`;
+        });
+
+        console.log(htmls.join(''));
+
+        // console.log(htmls.join(''));
+    </script>
+</body>
+</html>

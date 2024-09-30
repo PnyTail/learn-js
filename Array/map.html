@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FOmareGege%2Fposts%2Fpfbid037a3gbbAhYH8SwXzfewXs5Yk6zQ6ocpRKJMyVW9q2faSsGJp7Vnm5akh6GCvnZtCnl&show_text=true&width=500" width="500" height="645" 
+    style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+    <script>
+        let courses = [
+            {
+                id: 1,
+                name: 'javascript',
+                coin: 250
+                //250
+            },
+            {
+                id: 2,
+                name: 'HTML, CSS',
+                coin: 0
+            },
+            {
+                id: 3,
+                name: 'Ruby',
+                coin: 0
+            },
+            {
+                id: 4,
+                name: 'PHP',
+                coin: 400
+            },
+            {
+                id: 5,
+                name: 'ReactJS',
+                coin: 500
+            },
+            {
+                id: 6,
+                name: 'Ruby',
+                coin: 50
+            }
+         ];
+
+         //map() dùng để chỉnh sửa element của 1 array
+
+         //phương thức map sẽ trả về 1 mảng mới và gán mảng đó cho biến newCourses
+         //mảng đó tuỳ vào người dùng mà sẽ có giá trị giống hoặc khách so với mảng ban đầu
+        //cần truyền 1 function vào map() 
+
+        //có thể bỏ tham số t3 đi function courseHandler(course, index, originArray)
+        function courseHandler(course, index) {
+            // console.log(course);
+            // return 123;
+            return {
+                id: course.name,
+                name: `Khoá học: ${course.name}`,
+                coin: course.coin,
+                coinText: `Giá: ${course.coin}`,
+                index: index,
+                // originArray: originArray
+                originArray: courses
+            };
+        }
+
+        //map() sẽ duyệt qua từng phần tử của mảng, và mỗi lần duyệt qua tới phần tử nào thì nó
+        //sẽ dùng chính cái phần tử đó để gọi function đã truyền vào 
+
+        //mỗi lần return của hàm courseHandler() sẽ là phần tử thứ 1 của mảng newCourses[]
+
+        let newCourses = courses.map(courseHandler);
+        console.log(newCourses);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //đối tượng Date
+
+        let date = new Date(); //cách 1 --> kiểu object
+        // let ngay = Date(); //cách 2 --> kiểu string nên ko thể truy xuất các thuộc tính, phương thức của đối tượng
+        //date được vì nó ko phải 1 object
+
+        // console.log(ngay.getFullYear());
+
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1; // đếm từ số 0 nên phải + 1
+        let day = date.getDate();
+        
+        // console.log(month);
+        // console.log(day);
+
+        /**
+         * getHours()
+         * getMinutes()
+         * getSeconds()
+         * */
+        
+        console.log(`${day}/${month}/${year}`); //in ra ngày hiện tại
+    </script>
+</body>
+</html>

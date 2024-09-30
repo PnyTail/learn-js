@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object trong JS
+        let emailKey = 'emailvip';
+        let myInfo = {
+            name: 'Nam Hoang',
+            age: 18,
+            address: 'Biên Hoà',
+            [emailKey]: 'tet@vip.com',
+            getName: function() {
+                return this.name;
+            }
+        };
+        // myKey = 'address';
+        // delete myInfo.age; //xoá 1 cặp key value
+
+        // myInfo.email = 'nam1@gmail.com'; //thêm key và value mới cho object đã tạo. key là email, value là nam1@gmail.com
+        // myInfo['my-email'] = 'nam2@gmail.com'; //cách 2 để thêm key mới, có dấu đặc biệt
+        // console.log(myInfo);
+        // console.log(myInfo.name);
+        // console.log(myInfo[myKey]);
+        console.log(myInfo.getName());
+
+        //function --> phương thức / method
+        //thuộc tính / property
+    </script>
+</body>
+</html>

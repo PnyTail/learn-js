@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Làm việc với array
+        1. To string
+        2. Join
+        3. Pop
+        4. Push
+        5. Shift
+        6. Unshift
+        7. splicing - splice
+        8. Concat - nối mảng
+        9. Slicing - sclice
+        */
+
+        let languages = [
+            'Javascript',
+            'PHP',
+            'Ruby'
+        ];
+
+        // console.log(languages.toString()); //chuyển array sang string
+        console.log(languages.join(' - ')); //chuyển sang string nhưng giữa các phần tử có dấu gạch ngang
+        // console.log(languages.pop()); //xoá phần tử cuối mảng và trả về phần tử đã xoá
+        // console.log(languages);
+        // console.log(languages.push('dart', 'Java')); //thêm 1 hoặc nhiều phần tử vào cuối mảng và trả về độ dài mới của mảng đó
+        // console.log(languages.shift()); //xoá phần tử ở đầu mảng và trả về phần tử đã xoá
+        // console.log(languages.unshift('Csharp')); //thêm 1 hoặc nhiều phần tử vào đầu mảng và trả về độ dài mới của mảng
+        //languages.splice(1, 2); //vị trí số 1, đặt con trỏ tại vị trí số 1 (ngay đầu 'PHP'); và từ vị trí đó xoá 2 phần tử
+                                //-> còn lại 1 phần tử đó là 'Javascript'. truyền số 0 thì sẽ ko xoá gì cả
+        //languages.splice(1, 0, 'Dart'); //thêm 'dart' ngay trước 'PHP' -> ['Javascript', 'Dart', 'PHP', 'Ruby']
+        //languages.splice(1, 1, 'Dart'); //xoá vị trí 1 ('php') và thêm 'dart' ngay vị trí đó -> ['Javascript', 'Dart', 'Ruby']
+        // languages.splice(1, 2, 'Dart', 'Java'); //có thể thêm vô số phần tử phía sau
+
+        
+        // let languages2 = [
+        //     'Dart',
+        //     'Java'
+        // ];
+        // console.log(languages.concat(languages2)); //lấy mảng languages2 chèn vào mảng languages, và trả về mảng mới sau khi đã kết hợp
+                                                    // -> ['Javascript', 'PHP', 'Ruby', 'Dart', 'Java']
+        
+                                                    
+        // console.log(languages.slice(1, 2)); //cắt từ vị trí 1 đến vị trí 2 -> ['PHP']
+        //console.log(languages.slice(1)); // cắt đến hết mảng -> ['PHP', 'Ruby']
+        // console.log(languages.slice(-2, -1)); //cắt vị trí -2 đến -1 -> ['PHP']. truyền số âm để
+        // console.log(languages.slice(0)); //copy mảng
+        //console.log(languages);
+        // console.log(languages.slice(-1)); //-> cắt lấy giá trị cuối mảng, từ vị trí -1 đến hết mảng
+        // console.log(languages.slice(0, 1)); //lấy giá trị đầu mảng
+    </script>
+</body>
+</html>

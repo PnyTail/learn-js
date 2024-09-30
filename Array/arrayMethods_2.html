@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array methods
+        /** forEach() - dùng để duyệt mảng
+         * every() - trả về kiểu bool (đúng/sai)
+         * some()
+         * find()
+         * filter()
+         * map()
+         * reduce()
+         */
+        
+         let courses = [
+            {
+                id: 1,
+                name: 'javascript',
+                coin: 250
+                //250
+            },
+            {
+                id: 2,
+                name: 'HTML, CSS',
+                coin: 0
+            },
+            {
+                id: 3,
+                name: 'Ruby',
+                coin: 0
+            },
+            {
+                id: 4,
+                name: 'PHP',
+                coin: 400
+            },
+            {
+                id: 5,
+                name: 'ReactJS',
+                coin: 500
+            },
+            {
+                id: 6,
+                name: 'Ruby',
+                coin: 50
+            }
+         ];
+
+
+         //tham số thứ 1 là từng phần tử của mảng, đặt tên tuỳ ý hợp lý
+        //  courses.forEach(function(course, index) {
+        //     console.log(index, course);
+        //  });
+
+
+        //kiểm tra tất cả phần tử của mảng phải thoả mãn 1 điều kiện nào đó
+        //trả về bool
+        // let isFree = courses.every(function(course, index) {
+        //     console.log(index);
+        //     return course.coin === 0;
+        //     //nếu tất cả course free, trả về true, ngược lại false
+        //  });
+        //  console.log(isFree);
+
+        
+         //every() kiểm tra từng phần tử 1, nếu đúng thì mới đến phần từ tiếp theo
+         //nếu sai, nó ngừng duyệt luôn và trả về false
+
+
+        //some() chỉ cần 1 điều kiện đúng là trả về true luôn và sẽ ngừng duyệt mảng
+        // let isFree = courses.some(function(course, index) {
+        //     console.log(index);
+        //     return course.coin === 0;
+        
+        // });
+        //  console.log(isFree);
+
+
+        //lặp qua từng phần tử, phần tử nào thoả mãn điều kiện (tức return TRUE)
+        //thì nó sẽ trả về chính phần tử đó, và kết thúc duyệt
+        // let course = courses.find(function(course, index) {
+        //     console.log(index);
+        //     return course.name === 'Ruby';
+        // });
+        //  console.log(course);
+
+
+        //cũng giống như find() nhưng thay vì chỉ trả về 1 phần tử
+        //thì nó sẽ trả về tất cả phần tử thoả mãn điều kiện 
+        let courseName = courses.filter(function(course, index) {
+            console.log(index);
+            return course.name === 'Ruby';
+        });
+         console.log(courseName);
+    
+</script>
+</body>
+</html>

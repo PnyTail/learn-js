@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //vòng lặp lồng nhau - nested loop
+        let myArray = [
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ];
+        myArrLen = myArray.length;
+        for (let i = 0; i < myArrLen; i++) {
+            // console.log(myArray[i]);
+            for (let j = 0; j < myArray[i].length; j++) {
+                console.log(myArray[i][j]);
+            }
+        }
+    </script>
+</body>
+</html>

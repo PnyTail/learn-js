@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let myStr = 'Hoc JS tai JS JS F8!';
+
+        // 1. length
+        // console.log(myStr.length);
+
+        // 2. find index, nếu ko tìm dc sẽ trả về -1
+        // console.log(myStr.indexOf('JS')); //tìm vị trí của chuỗi
+        // console.log(myStr.indexOf('JS', 6)); //tìm vị trí kể từ thứ tự 6
+        // console.log(myStr.lastIndexOf('JS')); //tìm chuỗi cuối cùng
+        // console.log(myStr.search('JS')); //search và indexOf khác nhau
+
+        //3. cut string: cắt chuỗi
+        // console.log(myStr.slice(4, 6)); //;>cắt được chuỗi 'JS'
+        // console.log(myStr.slice(4)); //cắt từ JS đến hết 'JS tai F8!'
+        // console.log(myStr.slice(0)); //lấy hết chuỗi 'Hoc JS tai F8!'
+        // console.log(myStr.slice(-3, -1)); //cắt từ phải sang trái -> 'F8'
+
+        //4. replace
+        //console.log(myStr.replace('JS', 'Javascript')); //tháy js bằng javascript
+        //Nhưng nếu chuỗi có nhiều 'JS' hơn thì sao? dùng biểu thức chính quy sẽ học ở khoá nâng cao
+        //console.log(myStr.replace(/JS/g, 'Javascript')); //thay toàn bộ 'JS'
+
+        //5. convert to upper case 
+        // console.log(myStr.toUpperCase());
+        //6. convert to lower case
+        // console.log(myStr.toLowerCase());
+
+        //7. Trim -> cắt tỉa
+        let myStr1 = '    Hoc JS tai F8!      ';
+        //console.log(myStr1.trim()); //loại bỏ khoảng trắng ở 2 đầu
+        
+        //8. Split. phải tìm điểm chung hợp lý để cắt. cắt 1 chuỗi thành 1 mảng
+        // let languages = 'Javascript, PHP, Ruby';
+        // console.log(languages.split(', ')); //điểm chung là dấu phẩy (,) và khoảng trắng.
+        // console.log(languages.split(',')); //Nếu bỏ khoảng trắng thì nó sẽ cắt theo dấu phẩy, và sẽ thừa ra 1 dấu cách ở trong phần tử của mảng
+        // let lang = 'Javascript';
+        // console.log(lang.split('')); //điểm chung là rỗng, cắt từng ký tự thành phần tử của mảng
+
+        //9. Get a character by index
+        let str = 'Nam Hoang';
+        // console.log(str.charAt(2)); -> 'm'
+        console.log(typeof str.charAt(14)); //nếu truyền vào 1 vị trí ko có thực, thì sẽ trả về chuỗi rỗng như này '', có thể dùng typeof để xem
+        console.log(str[2]); //cách khác
+    </script>
+</body>
+</html>

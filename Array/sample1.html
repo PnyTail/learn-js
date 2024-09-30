@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var languages = [
+            'javascript',
+            'PHP',
+            'Ruby',
+            null,
+            undefined,
+            function() {},
+            {},
+            123
+        ];
+        console.log( typeof languages);
+        console.log(Array.isArray(languages)); //kiểm tra biến languages có phải array hay không, trả về true nếu đúng
+        console.log(languages.length); //độ dài của mảng
+    </script>
+
+</body>
+</html>

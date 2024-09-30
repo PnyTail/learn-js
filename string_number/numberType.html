@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number.isFinite() xác định xem giá trị đã cho có phải số hữu hạn hay không. Trả về Boolean
+        // Number.isInteger() xác định xem giá trị đã cho có phải là số nguyên hay ko. trả về kiểu bool
+        // Number.parseFloat() chuyển đổi chuỗi đã cho thành 1 số dấu phẩy động
+        // Number.parseInt() chuyển đổi chuỗi đã cho thành một số nguyên
+        // Number.prototype.toFixed() chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân
+        // Number.prototype.toString() chuyển đổi và trả về số đã cho dưới dạng chuỗi
+
+        console.log(Number.isFinite(2 / 0)) ; //false
+        console.log(Number.isFinite(20 / 5)); //true
+        console.log(Number.isFinite(0 / 0)); //false
+
+        console.log(Number.isInteger(99999999)); //true
+        console.log(Number.isInteger(2.1)); //false
+        console.log(Number.isInteger(Math.PI)); //false
+
+        console.log(Number.parseFloat('10')); //10
+        console.log(Number.parseFloat('10.00')); //10
+        console.log(Number.parseFloat('238,21')) //238
+        console.log(Number.parseFloat('237.22')); //237.22
+        console.log(Number.parseFloat('34 56 78')); //34
+        console.log(Number.parseFloat(' 37 ')); //37
+        console.log(Number.parseFloat('18 is my age')); //18
+
+        Number.parseInt('10'); //10
+        Number.parseInt('10.00') //10
+        Number.parseInt('238,21'); //238
+        Number.parseInt('237.22'); //237
+        Number.parseInt('34 56 78'); //34
+        console.log(Number.parseInt(' 37 ')); //37
+        console.log(Number.parseInt('18 is my age')); //18
+
+        let numberObject = 1234.56789;
+
+        console.log(numberObject.toFixed()); //'1235' trả về chuỗi
+        console.log(numberObject.toFixed(1)); //'1234.6' 
+        console.log(numberObject.toFixed(6)); // '1234.567890'
+
+        console.log((11).toString()); //'11'
+        console.log((18).toString()); //'18'
+        console.log((17.3).toString()); //'17.3'
+    </script>
+</body>
+</html>

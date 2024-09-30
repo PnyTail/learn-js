@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //forEach2()
+
+        /*
+            1. object prototype
+            2. for in
+            3. hasOwnProperty
+        */
+
+        Array.prototype.forEach2 = function(cb) {
+            for (let index in this) {
+                if (this.hasOwnProperty(index)) {
+                    // console.log( index);
+                    cb(this[index], index, this)
+                }
+                
+            }
+        }
+
+        // console.log(Array.prototype);
+
+        let courses = [
+            'Javascript',
+            'PHP',
+            'Ruby'
+        ];
+
+        courses.forEach2(function(course, index, array) {
+            console.log(course, index, array);
+        })
+
+        // courses.forEach(function(course, index, array) {
+        //     console.log(course, index, array);
+        // })
+    </script>
+</body>
+</html>

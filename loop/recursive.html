@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // recursive - đệ quy
+
+        //value của Set là unique
+        // console.log(new Set([1, 2, 3, 1, 2, 3, 1, 2, 3]));
+
+        let array = ['a', 'b', 'c', 'a', 'b', 'c'];
+
+        // console.log(new Set(array));
+        // console.log([...(new Set(array))]); //giải
+
+        //1. Xác định điểm dừng
+        //2. Logic handle - Xử lý logic -> mục đích để tạo ra điểm dừng
+        //
+
+        // function deQuy(num) {
+        //     num--;
+        //     if (num < 0) {
+        //         //Dừng
+        //         //...
+        //     }
+
+        //     deQuy();
+        // }
+        // deQuy(10);
+
+
+        //ví dụ về đệ quy
+        // function countDown(num) {
+        //     if (num > 0) {
+        //         console.log(num);
+        //         return countDown(num - 1);
+        //     }
+        //     // console.log(num);
+        //     return num;
+        // }
+        // countDown(3);
+
+        //giai thừa
+        //3! = 3 * 2 * 1
+        //6! = 6 * 5 * 4 * 3 * 2 * 1 =
+        // function giaiThua(number) {
+        //     let result = 1;
+        //     for (let i = number; i > 0; i--) {
+        //         result *= i;
+        //     }
+        //     return result;
+        // }
+        // console.log(giaiThua(6));
+
+        // function giaiThua(number) {
+        //     let result = 1;
+        //     for (let i = 1; i <= number; i++) {
+        //         result *= i;
+        //     }
+        //     return result;
+        // }
+        // console.log(giaiThua(6));
+
+        function giaiThua(number) {
+            if (number > 0) {
+                return number * giaiThua(number - 1);
+            }
+            return 1;
+        }
+        console.log(giaiThua(6));
+
+        /**
+         * 6 > 0
+         * 6 * giaiThua(5)
+         *      5 * giaiThua(4)
+         *          4 * giaiThua(3)
+         *              3 * giaiThua(2)
+         *                  2 * giaiThua(1)
+         *                      1 * giaiThua(0)
+         *                          1
+         * 
+         * 
+        */
+
+    </script>
+</body>
+</html>

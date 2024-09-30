@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Callback
+            Là hàm (function) được truyền qua đối số khi gọi hàm khác
+
+            1. Là hàm
+            2. Được truyền qua đối số
+        */
+
+        function myFunction(param) {
+            if (typeof param === 'function') {
+                param('Hello world');
+            }
+        }
+
+        function myCallBack(value) {
+            console.log('value: ', value);
+        }
+
+        myFunction(myCallBack);
+
+    </script>
+</body>
+</html>

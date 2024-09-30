@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let courses = [
+            {
+                id: 1,
+                name: 'javascript',
+                coin: 100
+                //250
+            },
+            {
+                id: 2,
+                name: 'HTML, CSS',
+                coin: 200
+            },
+            {
+                id: 3,
+                name: 'Ruby',
+                coin: 220
+            },
+            {
+                id: 4,
+                name: 'PHP',
+                coin: 200
+            },
+            {
+                id: 5,
+                name: 'ReactJS',
+                coin: 480
+            }
+         ];
+
+        // let i = 0;
+        // let totalCoin = courses.reduce(function(total, course) {
+        //     i++;
+
+        //     console.log(i, total);
+
+        //     return total + course.coin;
+        // }); 
+        //initial value
+        /*
+            khi không truyền vào giá trị khởi tạo, nó sẽ lấy phần tử đầu tiên của mảng
+            làm giá trị khởi tạo 
+        */
+
+        // console.log(totalCoin);
+
+
+        /*
+            Ví dụ về việc không cần init value
+        */
+        // let numbers = [100, 200, 220, 200, 480];
+
+        // let totalNumbers = numbers.reduce(function(sum, number) {
+        //     return sum + number;
+        // })
+
+        // console.log(totalNumbers);
+
+
+
+        //Flat - "Làm phẳng" mảng từ Deep array - "Mảng sâu"
+        // let depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
+        
+        // let flatArray = depthArray.reduce(function(flatOutput, deepItem) {
+        //     return flatOutput.concat(deepItem);
+        // }, [])
+
+        // console.log(flatArray);
+
+
+        //Lấy ra các khoá học đưa vào 1 mảng mới
+        let topics = [
+            {
+                topic: 'Front-End',
+                course: [
+                    {
+                        id: 1,
+                        title: 'HTML, CSS'
+                    },
+                    {
+                        id: 2,
+                        title: 'Javascript'
+                    }
+                ]
+            },
+            {
+                topic: 'Back-End',
+                course: [
+                    {
+                        id: 4,
+                        title: 'PHP'
+                    },
+                    {
+                        id: 5,
+                        title: 'NodeJS'
+                    }
+                ]
+            }
+        ];
+
+        //outputCourse là biến lưu trữ
+        let newCourses = topics.reduce(function(outputCourse, currentTopic) {
+            return outputCourse.concat(currentTopic.course);
+        }, [])
+
+        console.log(newCourses);
+
+    </script>
+</body>
+</html>

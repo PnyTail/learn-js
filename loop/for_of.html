@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //For...of
+        //lấy từng phần tử của 1 mảng, từng chữ cái của 1 chuỗi
+
+        let languages = [
+            'javascript', 
+            'php',
+            'java'
+        ]
+        // let languages = 'Javascript';
+        // for (let value of languages) {
+        //     console.log(value);
+        // }
+
+        let myInfo = {
+            name: 'Nam',
+            age: 19
+        };
+        // console.log(Object.keys(myInfo)); //trả về 1 mảng gồm các key của object
+        //cách 1: hiển thị giá trị của obj
+        // for (let value of Object.keys(myInfo)) {
+        //     console.log(myInfo[value]);
+        // }
+
+        // console.log(Object.values(myInfo)); //trả về 1 mảng gồm các value của obj
+        //cách 2:
+        for (let value of Object.values(myInfo)) {
+            console.log(value); //19
+        }
+    </script>
+</body>
+</html>

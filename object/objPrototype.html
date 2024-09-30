@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object prototype - nguyên mẫu (khuôn) để tạo nên 1 obj (nguyên liệu để tạo nên ngôi nhà)
+        //thêm 1 thuộc tính hoặc phương thức mới bên ngoài hàm, thêm thuộc tính và phương thức mới cho bản thiết kế
+
+        function User(firstName, lastName, avatar) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.avatar = avatar;
+
+            this.getName = function() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        //thêm bằng prototype thì các obj sẽ đều có thuộc tính/phương thức mới
+        //ex:
+        User.prototype.className = 'F8';
+        User.prototype.getClassName = function() {
+            return this.className; //từ khoá this trả về đối tượng nào đang gọi getClassName
+        }
+
+        let user1 = new User('Nam', 'Hoàng', 'avt1');
+        let user2 = new User('Nam2', 'Hoàng2', 'avt2');
+
+        console.log(user1.className);
+        console.log(user2.getClassName()); //user2 gọi getClassName nên từ khoá this sẽ trả về user2 --> user2.getClassName()
+        console.log(user1);
+
+    </script>
+</body>
+</html>

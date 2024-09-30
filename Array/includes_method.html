@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //includes method, chỉ có trong array và string
+
+        // let title = 'resposive web design';
+
+        /*
+            trong chuỗi title, nếu có từ 'web' thì trả về true.
+            Ngược lại, nếu không có thì trả về false
+
+            đối số thứ 2 là bắt đầu tìm kiếm từ vị trí nào
+        */
+        // console.log(title.includes('web'), 2);
+
+
+        let courses = ['javascript', 'php', 'dart'];
+
+        /*
+            tìm xem có phần tử nào trong array không
+            đối số thứ 2 là bắt đầu tìm kiếm từ index thứ mấy
+            có thể truyền số âm, 3 + -1
+        */
+        console.log(courses.includes('javascript', 1));
+
+    </script>
+</body>
+</html>
