@@ -11,3 +11,13 @@ console.log(!!NaN) // false
 
 console.log("hello")
 console.log(!!document.all);
+
+/**
+ * built-in function:
+ * alert
+ * console (console.log, console.error, console.warn)
+ * confirm
+ * prompt
+ * setTimeout
+ * setInterval
+ */
