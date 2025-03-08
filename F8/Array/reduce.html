@@ -90,6 +90,12 @@
             phương thức reduce(), có thể truyền vào bất cứ kiểu dữ liệu nào.
             khi reduce hoạt động, nó sẽ gọi ngược lại function coinCalc và sẽ trả lại các tham số.
             số 0 sẽ được gán cho accumulator (biến lưu trữ) vào lần duyệt đầu tiên
+
+            + biến lưu trữ
+            + thực hiện việc lưu trữ
+
+            biến lưu trữ sẽ được cập nhật sau mỗi lần duyệt qua phần tử trong mảng
+            return lần 1 là kết quả của accumulator lần 2 (thực hiện lưu trữ)
         */
         var totalCoin = courses.reduce(coinCalc, 0);
 
