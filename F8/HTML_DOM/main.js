@@ -1,20 +1,19 @@
+// DOM attributes
 
+let headingElement = document.querySelector('h1');
 
-// let headingNode = document.getElementById('heading');
-// console.log(headingNode);
-// console.log({
-//     element: headingNode
-// });
+// console.log(headingElement);
 
-// let listItems = document.querySelectorAll('.box-1 li');
-// console.log(listItems);
+// thêm attribute vào element, cách 1
+// headingElement.title = 'This is a heading';
+// headingElement.id = 'main-heading';
+// headingElement.className = 'heading';
 
-let boxNode = document.querySelector('.box-1');
-// công việc 1: sử dụng tới `boxNode`
-// ...
-console.log(boxNode);
+// cách 2: dùng setAttribute để thêm attribute vào element
+// headingElement.setAttribute('title', 'ahihi');
 
-// công việc 2: sử dụng tới li elements là con của `.box-1`
-console.log(boxNode.querySelectorAll('li'));
+// lấy ra giá trị (value) của attribute (class)
+// console.log(headingElement.getAttribute('class'));
 
-
+headingElement.title = 'This is a heading';
+console.log(headingElement.title);
