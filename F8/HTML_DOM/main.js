@@ -1,19 +1,47 @@
-// DOM attributes
+// innerText & textContent
 
 let headingElement = document.querySelector('h1');
 
-// console.log(headingElement);
+// console.log(headingElement.innerText);
+// console.log(headingElement.textContent);
 
-// thêm attribute vào element, cách 1
-// headingElement.title = 'This is a heading';
-// headingElement.id = 'main-heading';
-// headingElement.className = 'heading';
+// headingElement.innerText = 'Good Bye';
 
-// cách 2: dùng setAttribute để thêm attribute vào element
-// headingElement.setAttribute('title', 'ahihi');
+// console.log(headingElement.innerText);
+// console.log(headingElement.textContent);
 
-// lấy ra giá trị (value) của attribute (class)
-// console.log(headingElement.getAttribute('class'));
+/** innerText will not show the hidden text
+ * innerText chỉ hiện thị những text mà người dùng có thể thấy được
+ * innerText chỉ tồn tại trong element node
+*/
 
-headingElement.title = 'This is a heading';
-console.log(headingElement.title);
+/** textContent will show the hidden text
+ * textContent sẽ hiển thị tất cả các text Node trong element
+ * textContent tồn tại trong cả element node và text node
+ */
+
+/**
+ * nội dung nằm giữa một thẻ tag là 1 text Node
+ * các thẻ là element node
+ */
+
+// headingElement.innerText = '<i>Hello</i>';
+
+// headingElement.innerText = `
+
+// New heading
+
+
+// `;
+
+
+
+headingElement.textContent = `
+
+New heading
+
+
+`;
+
+
+
