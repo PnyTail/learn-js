@@ -1,17 +1,20 @@
 /**
- * 1. Element
- * 2. Attribute
- * 3. Text
+ * DOM styles
  */
-/**
- * innerHTML, outerHTML
- */
+
 
 let boxElement = document.querySelector('.box');
 
-// boxElement.innerHTML = '<h1>Heading</h1>';
+// boxElement.style.width = '100px';
+// boxElement.style.height = '200px';
+// boxElement.style.backgroundColor = 'green';
 
-console.log(boxElement.outerHTML);
+// cách viết nhiều thuộc tính
+Object.assign(boxElement.style, {
+    width: '200px',
+    height: '100px',
+    backgroundColor: 'red'
+});
 
-boxElement.outerHTML = '<span>Test</span>';
+console.log(boxElement.style.backgroundColor);
 
