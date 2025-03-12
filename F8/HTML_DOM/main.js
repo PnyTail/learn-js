@@ -1,47 +1,17 @@
-// innerText & textContent
-
-let headingElement = document.querySelector('h1');
-
-// console.log(headingElement.innerText);
-// console.log(headingElement.textContent);
-
-// headingElement.innerText = 'Good Bye';
-
-// console.log(headingElement.innerText);
-// console.log(headingElement.textContent);
-
-/** innerText will not show the hidden text
- * innerText chỉ hiện thị những text mà người dùng có thể thấy được
- * innerText chỉ tồn tại trong element node
-*/
-
-/** textContent will show the hidden text
- * textContent sẽ hiển thị tất cả các text Node trong element
- * textContent tồn tại trong cả element node và text node
- */
-
 /**
- * nội dung nằm giữa một thẻ tag là 1 text Node
- * các thẻ là element node
+ * 1. Element
+ * 2. Attribute
+ * 3. Text
+ */
+/**
+ * innerHTML, outerHTML
  */
 
-// headingElement.innerText = '<i>Hello</i>';
+let boxElement = document.querySelector('.box');
 
-// headingElement.innerText = `
+// boxElement.innerHTML = '<h1>Heading</h1>';
 
-// New heading
+console.log(boxElement.outerHTML);
 
-
-// `;
-
-
-
-headingElement.textContent = `
-
-New heading
-
-
-`;
-
-
+boxElement.outerHTML = '<span>Test</span>';
 
