@@ -1,20 +1,35 @@
 /**
- * DOM styles
+ * classList property
+ * 
+ * add() - add a class to an element
+ * remove() - remove a class from an element
+ * toggle() - toggle between adding and removing a class from an element
+ * contains() - check if an element contains a class
  */
 
 
 let boxElement = document.querySelector('.box');
 
-// boxElement.style.width = '100px';
-// boxElement.style.height = '200px';
-// boxElement.style.backgroundColor = 'green';
+// console.log(boxElement.classList.length); // 2
+// console.log(boxElement.classList[0]); // box
+// console.log(boxElement.classList.value); // box box-2
 
-// cách viết nhiều thuộc tính
-Object.assign(boxElement.style, {
-    width: '200px',
-    height: '100px',
-    backgroundColor: 'red'
-});
+boxElement.classList.add('red');
 
-console.log(boxElement.style.backgroundColor);
+// check if an element contains a class
+// console.log(boxElement.classList.contains('red')); // true
+
+// remove a class from an element
+// boxElement.classList.remove('red');
+
+// toggle between adding and removing a class from an element
+// setTimeout(() => {
+//     boxElement.classList.toggle('red');
+// }, 2000);
+
+setInterval(() => {
+    boxElement.classList.toggle('red');
+}, 1000);
+
+
 
