@@ -1,35 +1,24 @@
 /**
- * classList property
- * 
- * add() - add a class to an element
- * remove() - remove a class from an element
- * toggle() - toggle between adding and removing a class from an element
- * contains() - check if an element contains a class
+ * DOM events
+ * 1. Attribute events
+ * 2. Assign event using the element node
  */
 
+let h1Elements = document.querySelectorAll('h1');
 
-let boxElement = document.querySelector('.box');
+// event or "e" for short
+// h1Elements.onclick = function(e) {
+//     // console.log(Math.floor(Math.random() * 100));
+//     console.log(e.target);
+// }
 
-// console.log(boxElement.classList.length); // 2
-// console.log(boxElement.classList[0]); // box
-// console.log(boxElement.classList.value); // box box-2
+for (let i = 0; i < h1Elements.length; i++) {
+    h1Elements[i].onclick = function(e) {
+        console.log(e.target);
+    }
+}
 
-boxElement.classList.add('red');
 
-// check if an element contains a class
-// console.log(boxElement.classList.contains('red')); // true
-
-// remove a class from an element
-// boxElement.classList.remove('red');
-
-// toggle between adding and removing a class from an element
-// setTimeout(() => {
-//     boxElement.classList.toggle('red');
-// }, 2000);
-
-setInterval(() => {
-    boxElement.classList.toggle('red');
-}, 1000);
 
 
 
