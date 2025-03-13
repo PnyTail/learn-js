@@ -1,74 +1,47 @@
 /**
  * DOM events
  * 
- * 1. input / select
- * 2. keyup / keydown
+ * 1. preventDefault() : stop default action - loại bỏ hành vi mặc định của sự kiện (của trình duyệt)
+ * (ví dụ: click vào thẻ a sẽ chuyển trang)
+ * 
+ * 2. stopPropagation() : stop bubbling - loại bỏ sự kiện nổi bọt
  */
 
-let inputValue;
+// let aElements = document.querySelectorAll('a');
 
-// let inputElement = document.querySelector('input[type="text"]');
+// // console.log(aElements);
 
-// chỉ hiện giá trị khi blur (không focus vào ô input) ra khỏi input
-// inputElement.onchange = function(e) {
-//     console.log(e.target.value);
-// }
-
-// hiện giá trị ngay khi nhập vào input
-// inputElement.oninput = function(e) {
-//     // console.log(e.target.value);
-//     inputValue = e.target.value;
-// }
-/**------------------------------------------------ */
-
-// let inputElement = document.querySelector('input[type="checkbox"]');
-
-// inputElement.onchange = function(e) {
-//     console.log(e.target.checked);
-// }
-
-/**------------------------------------------------ */
-
-// let inputElement = document.querySelector('select');
-
-// inputElement.onchange = function(e) {
-//     console.log(e.target.value);
-// }
-
-/**------------------------------------------------ */
-/**
- * 2. keyup / keydown
- */
-
-// let inputElement = document.querySelector('input[type="text"]');
-
-// inputElement.onkeyup = function(e) {
-//     console.log(e.which);
-
-//     switch(e.which) {
-//         case 27:
-//             console.log('Exit');
-//             break;
-//         case 13:
-//             console.log('Enter');
-//             break;
+// for (let i = 0 ; i < aElements.length; i++) {
+//     aElements[i].onclick = function(e) {
+//         // console.log(e.target.href);
+//         if (!e.target.href.startsWith('https://www.w3schools.com/')) {
+//             e.preventDefault();
+//         }
 //     }
 // }
 
-/**
- * which, keyCode, charCode (deprecated) - không nên sử dụng
- */
+/** ------------------------------------------------ */
 
-// lắng nghe sự kiện keydown trên toàn bộ trang web
-document.onkeydown = function(e) {
-    // console.log(e.code);
-    console.log(e.key);
-    // switch(e.code) {
-    //     case 27:
-    //         console.log('Exit');
-    //         break;
-    //     case 13:
-    //         console.log('Enter');
-    //         break;
-    // }
+// let ulElement = document.querySelector('ul');
+
+// ulElement.onmousedown = function(e) {
+//     e.preventDefault();
+// }
+
+// ulElement.onclick = function(e) {
+//     console.log(e.target);
+// }
+
+/** ------------------------------------------------ */
+
+
+document.querySelector('div').onclick = function(e) {
+    console.log('DIV')
+}
+
+let btnElement = document.querySelector('button');
+
+btnElement.onclick = function(e) {
+    e.stopPropagation();
+    console.log('click me')
 }
