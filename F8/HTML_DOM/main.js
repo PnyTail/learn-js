@@ -1,47 +1,35 @@
 /**
- * DOM events
- * 
- * 1. preventDefault() : stop default action - loại bỏ hành vi mặc định của sự kiện (của trình duyệt)
- * (ví dụ: click vào thẻ a sẽ chuyển trang)
- * 
- * 2. stopPropagation() : stop bubbling - loại bỏ sự kiện nổi bọt
+ * 1. Event listener
+ * 2. JSON
+ * 3. Fetch
+ * 4. DOM location
+ * 5. Local storage
+ * 6. Session storage
+ * 7. Coding convention
+ * 8. Best practice
+ * 9. Mistakes
+ * 10. Performance
  */
 
-// let aElements = document.querySelectorAll('a');
+/**
+ * 1. Xử lý nhiều việc khi 1 event xảy ra
+ * 2. Lắng nghe / Hủy bỏ lắng nghe
+ */
 
-// // console.log(aElements);
+let btn = document.getElementById('btn');
 
-// for (let i = 0 ; i < aElements.length; i++) {
-//     aElements[i].onclick = function(e) {
-//         // console.log(e.target.href);
-//         if (!e.target.href.startsWith('https://www.w3schools.com/')) {
-//             e.preventDefault();
-//         }
-//     }
-// }
-
-/** ------------------------------------------------ */
-
-// let ulElement = document.querySelector('ul');
-
-// ulElement.onmousedown = function(e) {
-//     e.preventDefault();
-// }
-
-// ulElement.onclick = function(e) {
-//     console.log(e.target);
-// }
-
-/** ------------------------------------------------ */
-
-
-document.querySelector('div').onclick = function(e) {
-    console.log('DIV')
+function viec1() {
+    console.log('viec1');
+}
+function viec2() {
+    console.log('viec2');
 }
 
-let btnElement = document.querySelector('button');
+btn.addEventListener('click', viec1);
+btn.addEventListener('click', viec2);
 
-btnElement.onclick = function(e) {
-    e.stopPropagation();
-    console.log('click me')
-}
+
+// Hủy bỏ lắng nghe
+setTimeout(function() {
+    btn.removeEventListener('click', viec1);
+}, 3000);
