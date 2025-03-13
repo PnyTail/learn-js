@@ -58,30 +58,58 @@
  * promise.finally() -> xử lý sau khi promise kết thúc (thành công hoặc thất bại)
  */
 
-let promise = new Promise(
-    // excutor
-    function(resolve, reject) {
-        // Logic
-        // Khi logic Thành công: resolve()
-        // Khi logic Thất bại: reject()
+// let promise = new Promise(
+//     // excutor
+//     function(resolve, reject) {
+//         // Logic
+//         // Khi logic Thành công: resolve()
+//         // Khi logic Thất bại: reject()
 
-        resolve([{
-            id: 1,
-            name: 'Javascript'
-        }]);
+//         resolve();
+//     }
+// );
 
-        // reject('có lỗi xảy ra');
-    }
-);
 
-promise
-    .then(function(courses) {
-        console.log(courses);
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
-    .finally(function() {
-        console.log('Done');
+/**
+ * chain
+ * return giá trị của then để truyền cho then tiếp theo
+ * nếu không return thì giá trị của then tiếp theo sẽ là undefined
+ */
+// promise
+//     .then(function() {
+//         return new Promise(function(resolve) {
+//             setTimeout(function() {
+//                 resolve([1, 2, 3]);
+//             }, 3000);
+//         });
+//     })
+//     .then(function(data) {
+//         console.log(data);
+//         return 2;
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     })
+//     .finally(function() {
+//         console.log('Done');
+//     });
+
+
+function sleep(ms) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, ms);
     });
+}
 
+sleep(1000)
+    .then(function() {
+        console.log(1);
+        return sleep(1000);
+    })
+    .then(function() {
+        console.log(2);
+        return sleep(1000);
+    })
+    .then(function() {
+        console.log(3);
+    })
