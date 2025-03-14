@@ -1,92 +1,35 @@
-let users = [
-    {
-        id: 1,
-        name: 'Duc Anh'
-    },
-    {
-        id: 2,
-        name: 'Nam Hoang'
-    },
-    {
-        id: 3,
-        name: 'Phuc Nguyen'
-    }
-];
-
-let comments = [
-    {
-        id: 1,
-        user_id: 1,
-        content: 'Em ăn cơm chưa?'
-    },,
-    {
-        id: 2,
-        user_id: 2,
-        content: 'Chưa anh ơi'
-    },
-    {
-        id: 3,
-        user_id: 1,
-        content: 'OK anh sẽ chờ'
-    }
-];
-
 /**
- * 1. lấy comments
- * 2. từ comments lấy ra user_id, từ user_id lấy ra user tương ứng
+ * Fetch API
+ * 
+ * front-end
+ * back-end
+ * 
+ * API (url) - Application Programming Interface
+ * cổng giao tiếp giữa các phần mềm
+ * 
+ * backend -> API -> fetch -> json -> json.parse -> javascript types
+ * -> render ra giao diện với html
  */
 
-// fake API
-function getComments() {
-    return new Promise(function(resolve) {
-        setTimeout(function() {
-            resolve(comments);
-        }, 1000)
-    });
-}
+let postApi = 'https://jsonplaceholder.typicode.com/posts';
 
-function getUsersByIds(userIds) {
-    return new Promise(function(resolve) {
-        let result = users.filter(function(user) {
-            return userIds.includes(user.id);
-        });
-        setTimeout(function() {
-            resolve(result);
-        }, 1000)
+fetch(postApi)
+    .then(function(response) {
+        // JSON.parse: chuyển từ json -> javascript types
+        return response.json(); //json() nó đã parse cho mình rồi
     })
-}
-
-// 14:09
-getComments()
-    .then(function() {
-        // console.log(comments);
-
-        // lấy ra user_id từ comments
-        let userIds = comments.map(function(comment) {
-            return comment.user_id;
-        });
-        // console.log(userIds);
-
-        // lấy ra user, comment từ userIds
-        return getUsersByIds(userIds)
-            .then(function(users) {
-                return {
-                    users: users,
-                    comments: comments
-                };
-            });
-    })
-    .then(function(data) { //data là object chứa users và comments (kết quả trả về từ getUsersByIds)
-        let commentBlock = document.getElementById('comment-block');
-        
-        let html = '';
-        data.comments.forEach(function(comment) {
-            let user = data.users.find(function(user) {
-                return user.id === comment.user_id; //tìm user có id trùng với user_id của comment (join user_id từ comments với id từ users)
-            })
-            html += `<li>${user.name}: ${comment.content}</li>`;
+    .then(function(posts) {
+        // console.log(posts);
+        let htmls = posts.map(function(post) {
+            return `<li>
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>        
+            </li>`;
         });
 
-        commentBlock.innerHTML = html;
+        let html = htmls.join('');
+        document.getElementById('post-block').innerHTML = html;
     })
-
+    .catch(function(err) {
+        console.log(`Có lỗi: ${err}`);
+    })
