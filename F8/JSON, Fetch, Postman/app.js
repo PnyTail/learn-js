@@ -94,22 +94,97 @@
 //         console.log('Done');
 //     });
 
+/** ------------------------------------------------------ */
 
-function sleep(ms) {
-    return new Promise(function(resolve) {
-        setTimeout(resolve, ms);
-    });
-}
+// function sleep(ms) {
+//     return new Promise(function(resolve) {
+//         setTimeout(resolve, ms);
+//     });
+// }
 
-sleep(1000)
-    .then(function() {
-        console.log(1);
-        return sleep(1000);
+// sleep(1000)
+//     .then(function() {
+//         console.log(1);
+//         return sleep(1000);
+//     })
+//     .then(function() {
+//         console.log(2);
+//         return new Promise(function(resolve, reject) {
+//             reject("Có lỗi");
+//         }) 
+//     })
+//     .then(function() {
+//         console.log(3);
+//         return sleep(1000);
+//     })
+//     .then(function() {
+//         console.log(4);
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     })
+
+
+/** --------------------------------------------------------- */
+/**
+ * 1. promise.resolve
+ * 2. promise.reject
+ * 3. promise.all
+ */
+
+// let promise = new Promise(function(resolve, reject) {
+//     resolve('Success');
+// });
+
+// tạo 1 promise thành công
+// let promise = Promise.resolve('success');
+// let promise = Promise.reject('error');
+
+// promise
+//     .then(function(result) {
+//         console.log(result);
+//     })
+//     .catch(function(error) {
+//         console.log('lỗi: ', error);
+//     })
+
+/**
+ * 1 số Thư viện: output luôn là 1 promise
+ */
+
+/** --------------------------------------------------------- */
+
+let promise1 = new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve([1]);
+    }, 2000)
+});
+
+let promise2 = new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve([2, 3]);
+    }, 5000)
+});
+
+// let promise2 = Promise.reject('Có lỗi');
+
+/**
+ * promise1 tốn 2s
+ * promise2 tốn 5s
+ * 
+ * nếu chạy đồng bộ thì tốn 7s -> lâu
+ * => dùng Promise.all để chạy song song 2 promise => tốn 5s
+ */
+
+Promise.all([promise1, promise2])
+    .then(function(result) {
+        // console.log(result);
+
+        let result1 = result[0];
+        let result2 = result[1];
+
+        console.log(result1.concat(result2)); //nối 2 mảng
     })
-    .then(function() {
-        console.log(2);
-        return sleep(1000);
-    })
-    .then(function() {
-        console.log(3);
+    .catch(function(){ // nếu 1 trong 2 promise thất bại thì sẽ vào đây
+        console.log('Có lỗi');
     })
