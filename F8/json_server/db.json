@@ -1,0 +1,9 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "ReactJS",
+            "description": "ReactJS is a JavaScript library for building user interfaces."
+        }
+    ]
+}
