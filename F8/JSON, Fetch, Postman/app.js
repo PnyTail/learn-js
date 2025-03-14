@@ -1,12 +1,12 @@
 /**
- * cài đặt json-server : https://github.com/typicode/json-server
- * cài đặt json-server : 
- *  npm init
- *  npm install json-server
- *  tạo file db.json
- *  thêm dòng này vào file package.json, đoạn scripts:
- *      "start": "json-server --watch db.json",
- *  npm start 
+ * Fetch
+ * - JSON server: API server(fake) / mock API
+ *  - CRUD
+ *      - Create: POST
+ *      - Read: GET
+ *     - Update: PUT/PATCH
+ *    - Delete: DELETE
+ * - postman 
  */
 
 let courseApi = 'http://localhost:3000/courses';

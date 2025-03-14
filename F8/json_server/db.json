@@ -1,9 +1,14 @@
 {
-    "courses": [
-        {
-            "id": 1,
-            "name": "ReactJS",
-            "description": "ReactJS is a JavaScript library for building user interfaces."
-        }
-    ]
+  "courses": [
+    {
+      "name": "ReactJS",
+      "description": "ReactJS is a JavaScript library for building user interfaces.",
+      "id": "1"
+    },
+    {
+      "name": "Backend RESTFul Server với Node.JS và Express (SQL/MongoDB)2",
+      "description": "ahihi aguyi",
+      "id": "2"
+    }
+  ]
 }
