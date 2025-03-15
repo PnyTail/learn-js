@@ -18,14 +18,27 @@
  * Babel
  */
 
-const courseName = 'JavaScript';
-// const description = 'Course name: ' + courseName;
-const description = `Course name: ${courseName}`;
+// const logger = (log) => {
+//     console.log(log);
+// }
 
-console.log(description);
-console.log(`template string nội suy với \${}`);
+const logger = log => console.log(log);
 
-const multiline = `line 1
-line 2`;
+logger('vai ca lit');
 
-console.log(multiline);
+// logger('Hello World');
+
+// const sum = (a, b) => {
+//     return a + b;
+// }
+
+// const sum = (a, b) => a + b;
+// const sum = (a, b) => ({a: a, b: b}); //return object
+
+// console.log(sum(2, 3));
+
+/**
+ * arrow function không có context
+ * arrow function không dùng để tạo được constructor function
+ */
+
