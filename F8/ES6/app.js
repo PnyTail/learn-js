@@ -18,27 +18,21 @@
  * Babel
  */
 
-// const logger = (log) => {
-//     console.log(log);
+// function Course(name, price) {
+//     this.name = name;
+//     this.price = price;
 // }
 
-const logger = log => console.log(log);
+class Course {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
 
-logger('vai ca lit');
+    getName() {
+        return this.name;
+    }
+}
 
-// logger('Hello World');
-
-// const sum = (a, b) => {
-//     return a + b;
-// }
-
-// const sum = (a, b) => a + b;
-// const sum = (a, b) => ({a: a, b: b}); //return object
-
-// console.log(sum(2, 3));
-
-/**
- * arrow function không có context
- * arrow function không dùng để tạo được constructor function
- */
-
+const PhpCourse = new Course('PHP', 100);
+console.log(PhpCourse);
