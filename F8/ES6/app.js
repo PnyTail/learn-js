@@ -18,21 +18,19 @@
  * Babel
  */
 
-// function Course(name, price) {
-//     this.name = name;
-//     this.price = price;
+// function logger(log = 'giá trị mặc định') {
+//     console.log(log);
 // }
 
-class Course {
-    constructor(name, price) {
-        this.name = name;
-        this.price = price;
-    }
+// function logger(log, isAlert) {
+//     if (isAlert) return alert(log);
+//     console.log(log);
+// }
 
-    getName() {
-        return this.name;
-    }
+function logger(log, type = 'log') {
+    console[type](log);
 }
 
-const PhpCourse = new Course('PHP', 100);
-console.log(PhpCourse);
+// logger('message');
+logger('message', 'warn');
+// logger('message', 'error');
