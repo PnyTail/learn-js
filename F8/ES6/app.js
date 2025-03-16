@@ -18,29 +18,52 @@
  * Babel
  */
 
-// rest parameters là phần còn lại của 1 list các tham số
-// rest parameters sẽ trả về 1 array
-// function logger(a, ...params) {
-//     console.log(params);
-// }
-// logger(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+/**
+ * spread (...) : toán tử trải dài (rải ra)
+ */
 
-// function logger({  name, price, ...rest }) {
-//     console.log(name);
-//     console.log(price);
-//     console.log(rest);
+// let array1 = ['JavaScript', 'Python', 'PHP'];
+
+// let array2 = ['ReactJS', 'VueJS'];
+
+// // ... sẽ bỏ 2 dấu ngoặc vuông của array2, chỉ còn lại các phần tử trong array2
+// let array3 = [...array2, ...array1];
+
+// console.log(array3);
+
+/** -------------------------------------------------- */
+
+// tương tự, ... sẽ bỏ 2 dấu ngoặc nhọn của object
+// let object1 = {
+//     name: 'JavaScript'
+// };
+
+// let object2 = {
+//     price: 1000
+// };
+
+// let object3 = {
+//     ...object1,
+//     ...object2
+// };
+
+// console.log(object3);
+
+
+/** -------------------------------------------------- */
+
+let array = ['JavaScript', 'PHP', 'Ruby'];
+
+// function logger(a, b, c) {
+//     console.log(a, b, c);
 // }
 
-function logger([a, b, ...rest]) {
-    console.log(a);
-    console.log(b);
-    console.log(rest);
+function logger(...rest) {
+    for (let i = 0; i < rest.length; i++) {
+        console.log(rest[i]);
+    }
 }
 
-// logger({
-//     name: 'Javascript',
-//     price: 1000,
-//     description: 'Good'
-// })
+// logger(1, 2, 3); // 1 2 3
+logger(...array); // JavaScript PHP Ruby
 
-logger([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
