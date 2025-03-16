@@ -18,50 +18,57 @@
  * Babel
  */
 
-// Enhanced Object Literals
+// destructuring: phân rã, dùng với object và array
 
-/**
- * 1. Property value shorthand
- * 2. Method properties
- * 3. Computed property names
- * 
- * 1. Định nghĩa key:value cho object (ngắn gọn hơn)
- * 2. Định nghĩa method cho object (ngắn gọn hơn)
- * 3. Định nghĩa key của object dưới dạng biến
- */
+let array = ['Javascript', 'PHP', 'Ruby'];
 
-let name = 'JavaScript';
-let price = 1000;
+// cách cũ
+// let a = array[0];
+// let b = array[1];
+// let c = array[2];
 
-// Cách cũ
-// let course = {
-//     name: name,
-//     price: price,
-//     getName: function() {
-//         return name;
-//     }
-// };
+// cách mới: lấy ra 3 phần tử trong mảng array
+// let [a, b, c] = array;
+// console.log(a, b, c);
 
-// Cách mới: enhanced object literals
-// let course = {
-//     name,
-//     price,
-//     getName() {
-//         return name;
-//     }
-// }
+// lấy ra 2 phần tử trong mảng array
+// let [a, , c] = array;
+// console.log(a, c);
 
-// // console.log(course);
-// console.log(course.getName());
+// lấy ra phần tử đầu tiên và phần còn lại (rest parameters)
+// let [a, ...rest] = array;
 
+// console.log(a);
+// console.log(rest);
 
-// 3. Định nghĩa key của object dưới dạng biến
-let fieldName = 'name';
-let fieldPrice = 'price';
+/** ------------------------------- */
 
-const course = {
-    [fieldName]: 'JavaScript',
-    [fieldPrice]: 1000
+let course = {
+    name: 'Javascript',
+    price: 1000,
+    image: 'image-address'
+    // ,children: {
+    //     name: 'ReactJS'
+    // }
 };
 
-console.log(course);
+// let {name, price} = course;
+// let {name, ...rest} = course;
+// let { name: parentName, children: { name: childrenName }} = course;
+
+// console.log(name);
+// console.log(rest);
+// console.log(parentName);
+// console.log(childrenName);
+
+// let { name, description = 'default description' } = course;
+// console.log(name);
+// console.log(description);
+
+// dấu 3 chấm -> toán tử rest
+function logger(...params) {
+    console.log(params);
+}
+
+// logger(1, 2, 3, 4, 5);
+console.log(logger(1, 2, 3, 4, 5)); // undefined
