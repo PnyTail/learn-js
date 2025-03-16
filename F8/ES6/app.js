@@ -18,21 +18,18 @@
  * Babel
  */
 
-// function highlight(...rest) {
-//     // console.log(rest);
-// }
+/**
+ * Modules: import, export
+ */
 
-function highlight([first, ...strings], ...values) {
-    return values.reduce((acc, curr) => 
-        [...acc, `<span>${curr}</span>`, strings.shift()], 
-        [first]
-    )
-    .join('');
-}
+// import logger, { TYPE_LOG, TYPE_WARN, TYPE_ERROR } from './logger.js';
+import logger from './logger.js';
+// import {
+//     TYPE_LOG,
+//     TYPE_WARN,
+//     TYPE_ERROR
+// } from './constants.js';
+import * as constants from './constants.js'; // * là tất cả các export khác trong file constants.js
 
-let brand = 'w3schools';
-let course = 'JavaScript';
 
-const html = highlight`Free ${course} course at ${brand}!`;
-
-console.log(html);
+logger('Message...', constants.TYPE_ERROR);
