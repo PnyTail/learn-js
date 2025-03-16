@@ -18,52 +18,21 @@
  * Babel
  */
 
-/**
- * spread (...) : toán tử trải dài (rải ra)
- */
-
-// let array1 = ['JavaScript', 'Python', 'PHP'];
-
-// let array2 = ['ReactJS', 'VueJS'];
-
-// // ... sẽ bỏ 2 dấu ngoặc vuông của array2, chỉ còn lại các phần tử trong array2
-// let array3 = [...array2, ...array1];
-
-// console.log(array3);
-
-/** -------------------------------------------------- */
-
-// tương tự, ... sẽ bỏ 2 dấu ngoặc nhọn của object
-// let object1 = {
-//     name: 'JavaScript'
-// };
-
-// let object2 = {
-//     price: 1000
-// };
-
-// let object3 = {
-//     ...object1,
-//     ...object2
-// };
-
-// console.log(object3);
-
-
-/** -------------------------------------------------- */
-
-let array = ['JavaScript', 'PHP', 'Ruby'];
-
-// function logger(a, b, c) {
-//     console.log(a, b, c);
+// function highlight(...rest) {
+//     // console.log(rest);
 // }
 
-function logger(...rest) {
-    for (let i = 0; i < rest.length; i++) {
-        console.log(rest[i]);
-    }
+function highlight([first, ...strings], ...values) {
+    return values.reduce((acc, curr) => 
+        [...acc, `<span>${curr}</span>`, strings.shift()], 
+        [first]
+    )
+    .join('');
 }
 
-// logger(1, 2, 3); // 1 2 3
-logger(...array); // JavaScript PHP Ruby
+let brand = 'w3schools';
+let course = 'JavaScript';
 
+const html = highlight`Free ${course} course at ${brand}!`;
+
+console.log(html);
