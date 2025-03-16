@@ -13,23 +13,41 @@
  * 10. Enhanced Object Literals
  * 11. Tagged template literals
  * 12. Modules
- * 
+ * 13. Optional chaining (?.)
  * 
  * Babel
  */
 
-/**
- * Modules: import, export
- */
+// const obj = {
+//     name: 'Alice',
+//     cat: {
+//         name: 'Dinah',
+//         cat2: {
+//             name: 'Dinah 2',
+//             cat3: {
+//                 name: 'Dinah 3'
+//             }
+//         }
+//     }
+// };
 
-// import logger, { TYPE_LOG, TYPE_WARN, TYPE_ERROR } from './logger.js';
-import logger from './logger.js';
-// import {
-//     TYPE_LOG,
-//     TYPE_WARN,
-//     TYPE_ERROR
-// } from './constants.js';
-import * as constants from './constants.js'; // * là tất cả các export khác trong file constants.js
+// dùng optional chaining (?.) khi không chắc chắn key đó có tồn tại hay không
+
+// if (
+//     // obj &&
+//     // obj.cat &&
+//     // obj.cat.cat2 &&
+//     // obj.cat.cat2.cat3
+//     obj?.cat?.cat2?.cat3
+// ) {
+//     console.log(obj.cat.cat2.cat3.name);
+// }
 
 
-logger('Message...', constants.TYPE_ERROR);
+const obj = {
+    // getName(value) {
+    //     console.log(value);
+    // }
+}
+
+obj.getName?.('Alice');
