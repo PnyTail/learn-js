@@ -12,52 +12,20 @@
  * 11. Async function, await
  */
 
-// 1. IIFE : hàm tự gọi ngay khi khai báo
-// (function() {
-//     console.log('Now');
-// })();
+/** Scope - Phạm vi */
 
-// (() => {
-//     console.log('hello');
-// })();
-
-// (function(message) {
-//     console.log(message);
-// })('chào bạn');
-
-// để dấu ; trước IIFE
-// ;(function() {
-//     console.log('Now');
-// })()
-
-
-// đệ quy
-// let i = 0
-// ;(function myFunc() {
-//     i++
-//     console.log(i)
-
-//     if (i < 10)
-//         myFunc()
-// })()
-
-const app = (function() {
-    // private
-    const cars = []
-
-    return {
-        // public
-        get(index) {
-            return cars[index]
-        },
-        add(car) {
-            cars.push(car)
-        },
-        edit(index, car) {
-            cars[index] = car
-        },
-        delete(index) {
-            cars.splice(index, 1)
-        }
-    }
-})()
+/**
+ * - Các loại phạm vi:
+ *      - Global - toàn cầu: khai báo ở vị trí bên ngoài (không trong block nào cả)
+ *      - code block - khối mã: let, const
+ *      - local scope - hàm: var, function 
+ *      var (phạm vi gần nhất bên ngoài) (không khai báo trong hàm)
+ * 
+ * - Khi gọi mỗi hàm luôn có 1 phạm vi mới được tạo (kể cả là 1 hàm được gọi nhiều lần)
+ * - Các hàm có thể truy cập các biến được khai báo trong phạm vi của nó và bên ngoài nó
+ * - Cách thức một biến được truy cập
+ * - Khi nào một biến bị xoá khỏi bộ nhớ?
+ *      - biến toàn cầu? -> bị xoá khi chương trình kết thúc. web thì là tắt tab, f5, đóng trình duyệt
+ *      - biến trong block code & trong hàm?
+ *      - biến trong hàm được tham chiếu bởi 1 hàm
+ */
