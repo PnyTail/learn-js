@@ -1,40 +1,15 @@
-this.firstName = 'Minh'
-this.lastName = 'Thu'
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-// const teacher = {
-//     firstName: 'Minh',
-//     lastName: 'Thảo',
-//     getFullName: function() {
-//         return `${this.firstName} ${this.lastName}`
-//     }
-// }
-
-// case 1
-// console.log(teacher.getFullName()) // 'Minh Thảo'
-
-// case 2
-// const getTeacherName = teacher.getFullName
-// console.log(getTeacherName()) // 'Minh Thu'
-
-// ràng buộc (bind) this với teacher object
-// const getTeacherName = teacher.getFullName.bind(teacher)
-// console.log(getTeacherName()) // 'Minh Thảo'
+console.log($('#heading'));
 
 /**
- * Phương thức bind() sẽ trả về một hàm mới
- * Có thể nhận các đối số như hàm ban đầu
+ * delegate pattern js
  */
 
-const teacher = {
-    firstName: 'Minh',
-    lastName: 'Thảo',
-    getFullName: function() {
-        console.log(`${this.firstName} ${this.lastName}`)
-    }
-}
+/**
+ * Phương thức bind() cho phép ràng buộc this cho một phương thức (function)
+ * Phương thức bind() sẽ trả về một hàm mới với context được bind
+ * Hàm được trả về từ bind() vẫn có thể nhận các đối số của hàm gốc
+ */
 
-const button = document.querySelector('button')
-
-// nếu không bind thì this sẽ là button. Nếu bind thì this sẽ là teacher
-button.addEventListener('click', teacher.getFullName.bind(teacher))
-// button.onclick = teacher.getFullName.bind(teacher)
