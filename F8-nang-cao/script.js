@@ -1,29 +1,29 @@
 /**
- * Call method
+ * Apply method
  * 
- * Là phương thức trong prototype của Function destructor, phương thức này được dùng để
- *  gọi hàm và cũng có thể bind this cho hàm
+ * Phương thức này cho phép gọi một hàm với một this (bind) và truyền đổi số cho hàm gốc dưới dạng mảng.
  * 
- * Ví dụ:
- *  - Gọi hàm với call method
- *  - Gọi hàm và bind this, lưu ý trong strict mode vẫn có this nếu được bind
- *  - Thể hiện tính kế thừa (extends) trong OOP
- *  - Mượn hàm (function borrowing), thêm ví dụ với arguments
+ * về cơ bản nó giống call() method
  */
 
 const teacher = {
-    firstName: 'Minh',
-    lastName: 'Thu'
+    firstName: "Minh",
+    lastName: "Thu"
 }
-
-const me = {
-    firstName: 'Nam',
-    lastName: 'Hoàng',
-    showFullName() {
-        // console.log(this)
-        console.log(`${this.firstName} ${this.lastName}`);
-    }
+    
+function greet(greeting, message) {
+    return `${greeting} ${this.firstName} ${this.lastName}. ${message}`
 }
+    
+let result = greet.apply(teacher, ['Em chào cô', 'Cô dạy môn gì thế ạ? (Đã xem cô live stream 1 tiếng)'])
 
-// me.showFullName(); // Nam Hoàng
-me.showFullName.call(teacher); // Minh Thu, mượn hàm showFullName của me cho teacher
+console. log(result)
+
+// So sánh với call() method
+result = greet.call(teacher, 'Em chào cô', 'Cô dạy môn gì thế ạ? (Đã xem cô live stream 1 tiếng)')
+
+console.log(result)
+
+/**
+ * so sánh bind, call, apply
+ */
