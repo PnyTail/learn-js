@@ -1,15 +1,40 @@
+this.firstName = 'Minh'
+this.lastName = 'Thu'
+
+// const teacher = {
+//     firstName: 'Minh',
+//     lastName: 'Thảo',
+//     getFullName: function() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// case 1
+// console.log(teacher.getFullName()) // 'Minh Thảo'
+
+// case 2
+// const getTeacherName = teacher.getFullName
+// console.log(getTeacherName()) // 'Minh Thu'
+
+// ràng buộc (bind) this với teacher object
+// const getTeacherName = teacher.getFullName.bind(teacher)
+// console.log(getTeacherName()) // 'Minh Thảo'
+
 /**
- * this keyword
- * 
- * Từ khoá this trong JavaScript tham chiếu đến đối tượng mà nó thuộc về.
- * 
- * Đặc tính: liên quan đến context (ngữ cảnh) mà nó được gọi
- * 1. Trong một phương thức, this tham chiếu đến đối tượng truy cập phương thức đó (đối tượng trước dấu ".")
- * 2. Đứng ngoài phương thức (this trong hàm), this tham chiếu đến đối tượng global (window)
- * 3. this trong arrow function ...
- * 
- * Lưu ý:
- *  - this trong hàm tạo là đại diện cho đối tượng sẽ được tạo
- *  - this trong một hàm là undefined khi ở strict mode
- *  - Các phương thức bind(), call(), apply() có thể tham chiếu this tới đối tượng khác
+ * Phương thức bind() sẽ trả về một hàm mới
+ * Có thể nhận các đối số như hàm ban đầu
  */
+
+const teacher = {
+    firstName: 'Minh',
+    lastName: 'Thảo',
+    getFullName: function() {
+        console.log(`${this.firstName} ${this.lastName}`)
+    }
+}
+
+const button = document.querySelector('button')
+
+// nếu không bind thì this sẽ là button. Nếu bind thì this sẽ là teacher
+button.addEventListener('click', teacher.getFullName.bind(teacher))
+// button.onclick = teacher.getFullName.bind(teacher)
