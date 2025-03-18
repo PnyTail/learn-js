@@ -1,15 +1,15 @@
 /**
- * Value type and reference type
+ * this keyword
  * 
- * kiểu dữ liệu nguyên thuỷ
- * 1. value type (primitive data stypes): number, string, boolean, bigInt, null, undefined, symbol
+ * Từ khoá this trong JavaScript tham chiếu đến đối tượng mà nó thuộc về.
  * 
- * không nguyên thuỷ
- * 2. reference type (non-primitive data types): object, array, function
+ * Đặc tính: liên quan đến context (ngữ cảnh) mà nó được gọi
+ * 1. Trong một phương thức, this tham chiếu đến đối tượng truy cập phương thức đó (đối tượng trước dấu ".")
+ * 2. Đứng ngoài phương thức (this trong hàm), this tham chiếu đến đối tượng global (window)
+ * 3. this trong arrow function ...
  * 
- * Data types with function:
- *  - value types
- *  - reference types
- * 
- * side effect
+ * Lưu ý:
+ *  - this trong hàm tạo là đại diện cho đối tượng sẽ được tạo
+ *  - this trong một hàm là undefined khi ở strict mode
+ *  - Các phương thức bind(), call(), apply() có thể tham chiếu this tới đối tượng khác
  */
