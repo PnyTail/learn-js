@@ -12,20 +12,17 @@
  * 11. Async function, await
  */
 
-/** Scope - Phạm vi */
+/** closure */
 
 /**
- * - Các loại phạm vi:
- *      - Global - toàn cầu: khai báo ở vị trí bên ngoài (không trong block nào cả)
- *      - code block - khối mã: let, const
- *      - local scope - hàm: var, function 
- *      var (phạm vi gần nhất bên ngoài) (không khai báo trong hàm)
+ * Closure là một hàm có thể ghi nhớ nơi nó được tạo và truy cập đến biến ở phạm vi ngoài
  * 
- * - Khi gọi mỗi hàm luôn có 1 phạm vi mới được tạo (kể cả là 1 hàm được gọi nhiều lần)
- * - Các hàm có thể truy cập các biến được khai báo trong phạm vi của nó và bên ngoài nó
- * - Cách thức một biến được truy cập
- * - Khi nào một biến bị xoá khỏi bộ nhớ?
- *      - biến toàn cầu? -> bị xoá khi chương trình kết thúc. web thì là tắt tab, f5, đóng trình duyệt
- *      - biến trong block code & trong hàm?
- *      - biến trong hàm được tham chiếu bởi 1 hàm
+ * Ứng dụng:
+ *      - viết code ngắn hơn
+ *      - biểu diễn, ứng dụng tính private data trong OOP
+ * 
+ * Lưu ý:
+ *      - Biến được tham chiếu (refer) trong closure sẽ không được xoá khỏi bộ nhớ khi hàm cha thực thi xong
+ *      - Các khái niệm Javascript nâng cao dễ gây nhầm lẫn
  */
+
